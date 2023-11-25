@@ -1,5 +1,5 @@
 
-# Project Title: Automated Bridge Damage Detection and Segmentation
+# ArchitectEye: Multi-label Semantic Bridge Damage Segmentation
 
 ## Table of Contents
 - [Introduction](#introduction)
