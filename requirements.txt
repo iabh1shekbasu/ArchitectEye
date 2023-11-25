@@ -11,3 +11,5 @@ joblib
 contextlib2
 pathlib
 psutil
+pyparsing
+importlib_resources
