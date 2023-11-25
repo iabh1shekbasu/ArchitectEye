@@ -15,12 +15,12 @@
 - [Contact](#contact)
 
 ## Introduction
-This project presents a deep learning-based solution for automated bridge damage detection and segmentation, a critical challenge in maintaining the structural safety of global bridge infrastructure. Utilizing a Feature Pyramid Network (FPN) with an EfficientNet B4 backbone, pre-trained on ImageNet weights, our model excels in multi-label semantic segmentation. It is designed to work with the 'dacl10k: Dataset for Semantic Bridge Damage Segmentation', enabling the identification and classification of 19 different types of bridge damages. This model represents a significant advancement in the field of automated bridge damage detection. It not only demonstrates the potential of deep learning in structural safety assessments but also sets a new benchmark for future research endeavors. The model's ability to segment 19 different classes of damages is currently unmatched, showcasing our commitment to enhancing the safety and maintenance of both urban and rural bridge infrastructures. Our approach achieves state-of-the-art performance, particularly in terms of mean Intersection over Union (mIoU), further contributing to the field's development..
+This project presents a deep learning-based solution for automated bridge damage detection and segmentation, a critical challenge in maintaining the structural safety of global bridge infrastructure. Utilizing a Feature Pyramid Network (FPN) with an EfficientNet B4 backbone, pre-trained on ImageNet weights, our model excels in multi-label semantic segmentation. It is designed to work with the 'dacl10k: Dataset for Semantic Bridge Damage Segmentation', enabling the identification and classification of 19 different types of bridge damages. This model represents a significant advancement in the field of automated bridge damage detection. It not only demonstrates the potential of deep learning in structural safety assessments but also sets a new benchmark for future research endeavors. The model's ability to segment 19 different classes of damages is currently unmatched, showcasing our commitment to enhancing the safety and maintenance of both urban and rural bridge infrastructures. Our approach achieves state-of-the-art performance, particularly in terms of mean Intersection over Union (mIoU), further contributing to the field's development.
 
 ## File Descriptions
 
 - `create_pt_files.py`: Processes the 'dacl10k' dataset, resizing images and preparing them for training.
-- `model.py`: Defines and trains the deep learning model for bridge damage segmentation, leveraging advanced techniques and libraries.
+- `model.py`: Trains the deep learning model for bridge damage segmentation.
 
 ## Getting Started
 
