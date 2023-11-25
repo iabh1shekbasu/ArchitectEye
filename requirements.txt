@@ -1,0 +1,13 @@
+torch
+torchvision
+numpy
+pandas
+segmentation-models-pytorch
+tqdm
+Pillow
+scikit-image
+shapely
+joblib
+contextlib2
+pathlib
+psutil
