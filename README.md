@@ -26,11 +26,6 @@ Our Model Weights can be found at https://mbzuaiac-my.sharepoint.com/:f:/g/perso
 ## Getting Started
 
 ### Prerequisites
-
-Before running the project, install the necessary dependencies:
-
-```bash
-pip install -r requirements.txt
 ```
 ### Download the dataset
 
