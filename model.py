@@ -10,12 +10,12 @@ import matplotlib.pyplot as plt
 import os
 import logging
 import torch.nn as nn
-
 # Configure logging
 log_file_path = "/home/sanjay.manjunath/Downloads/AI_project/Music/new_model.pylogfile.log"  # Set your log file path here
 logging.basicConfig(filename=log_file_path, level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s', 
                     datefmt='%Y-%m-%d %H:%M:%S')
+
 
 # Modified Function to calculate IoU for multilabel segmentation
 def calculate_iou_multilabel(pred, target, threshold=0.5):
@@ -32,6 +32,8 @@ def calculate_iou_multilabel(pred, target, threshold=0.5):
     iou = (intersection + 1e-6) / (union + 1e-6)
     return iou  # Returns IoU for each class
 
+
+
 class DiceLoss(nn.Module):
     def __init__(self, weight=None, size_average=True):
         super(DiceLoss, self).__init__()
@@ -45,11 +47,11 @@ class DiceLoss(nn.Module):
         return 1 - dice
 
 # Dataset paths
-train_image_dir = "/users/sanjay.manjunath/Working_thanks_to_pd/dacl10k/pt_files_dacl/train/image/"
-train_mask_dir = "/users/sanjay.manjunath/Working_thanks_to_pd/dacl10k/pt_files_dacl/train/mask/"
+train_image_dir = "/l/users/sanjay.manjunath/Working_thanks_to_pd/dacl10k-toolkit/pt_files_dacl/train/image/"
+train_mask_dir = "/l/users/sanjay.manjunath/Working_thanks_to_pd/dacl10k-toolkit/pt_files_dacl/train/mask/"
 
-val_image_dir = "/users/sanjay.manjunath/Working_thanks_to_pd/dacl10k/pt_files_dacl/validate/image/"
-val_mask_dir = "/users/sanjay.manjunath/Working_thanks_to_pd/dacl10k/pt_files_dacl/validate/mask/"
+val_image_dir = "/l/users/sanjay.manjunath/Working_thanks_to_pd/dacl10k-toolkit/pt_files_dacl/validate/image/"
+val_mask_dir = "/l/users/sanjay.manjunath/Working_thanks_to_pd/dacl10k-toolkit/pt_files_dacl/validate/mask/"
 
 # Create Datasets
 train_dataset = Dacl10kPtdataset(train_image_dir, train_mask_dir)
@@ -79,7 +81,7 @@ model.to(device)
 # Optimizer
 optimizer = optim.Adam(model.parameters(), lr=1e-4)
 
-# Using BCEWithLogitsLoss for multilabel segmentation
+# Use BCEWithLogitsLoss for multilabel segmentation
 criterion1 = torch.nn.BCEWithLogitsLoss()
 criterion2 = DiceLoss() 
 
@@ -103,9 +105,9 @@ for epoch in range(num_epochs):
 
             optimizer.zero_grad()
             output = model(images)
-            # loss1 = criterion1(output, masks)
-            loss2 = jaccard_loss(output,masks)            
-            loss = loss2
+            loss1 = criterion1(output, masks)
+            loss2 = criterion2(output,masks)
+            loss = loss1 + loss2
             loss.backward()
             optimizer.step()
 
@@ -121,7 +123,7 @@ for epoch in range(num_epochs):
         for images, masks in val_loader:
             images, masks = images.to(device), masks.to(device)
             output = model(images)
-            val_loss = jaccard_loss(output,masks)  
+            val_loss = criterion1(output,masks) + criterion2(output, masks)  
             val_losses_epoch.append(val_loss.item())
 
             iou_per_class = calculate_iou_multilabel(output, masks)
