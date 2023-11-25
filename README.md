@@ -16,12 +16,11 @@
 
 ## Introduction
 
-This project presents a deep learning-based solution for automated bridge damage detection and segmentation, a critical challenge in maintaining the structural safety of global bridge infrastructure. Utilizing a Feature Pyramid Network (FPN) with an EfficientNet B4 backbone, pre-trained on ImageNet weights, our model excels in multi-label semantic segmentation. It is designed to work with the 'dacl10k: Dataset for Semantic Bridge Damage Segmentation', enabling the identification and classification of 19 different bridge damage classes.
+This project presents a deep learning-based solution for automated bridge damage detection and segmentation, a critical challenge in maintaining the structural safety of global bridge infrastructure. Utilizing a Feature Pyramid Network (FPN) with an EfficientNet B4 backbone, pre-trained on ImageNet weights, our model excels in multi-label semantic segmentation. It is designed to work with the 'dacl10k: Dataset for Semantic Bridge Damage Segmentation', enabling the identification and classification of 19 ...
 
 ## File Descriptions
 
 - `create_pt_files.py`: Processes the 'dacl10k' dataset, resizing images and preparing them for training.
-- `data_load.py`: Manages the loading and preprocessing of the dataset, handling various data formats and structures.
 - `model.py`: Defines and trains the deep learning model for bridge damage segmentation, leveraging advanced techniques and libraries.
 
 ## Getting Started
@@ -57,7 +56,6 @@ project/
 │   ├── train/ (n=6,935)
 │   └── validation/ (n=975)
 ├── create_pt_files.py
-├── data_load.py
 ├── model.py
 └── requirements.txt
 ```
@@ -75,19 +73,13 @@ cd yourprojectname
 
 To use the scripts, follow these steps:
 
-1. Process the 'dacl10k' dataset:
+1. Process the 'dacl10k' dataset to generate .pt files, which significantly reduces training time. This step might take a while to run:
 
    ```bash
    python create_pt_files.py
    ```
 
-2. Load and preprocess the data:
-
-   ```bash
-   python data_load.py
-   ```
-
-3. Train the model:
+2. Train the model (this step automatically handles data loading and preprocessing):
 
    ```bash
    python model.py
@@ -109,4 +101,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For any inquiries or further information, please reach out to [MMMYYYY Email].
+For any inquiries or further information, please reach out to [Your Email or Contact Information].
