@@ -100,4 +100,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For any inquiries or further information, please reach out to [Your Email or Contact Information].
+For any inquiries or further information, please reach out to [abhishek.basu@mbzuai.ac.ae].
