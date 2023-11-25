@@ -1,4 +1,4 @@
-from daclload import Dacl10kPtdataset
+from data_load import Dacl10kPtdataset
 from torch.utils.data import DataLoader
 import torch
 import segmentation_models_pytorch as smp
