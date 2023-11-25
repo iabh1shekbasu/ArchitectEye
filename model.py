@@ -89,7 +89,6 @@ criterion2 = DiceLoss()
 num_epochs = 20
 best_mIoU = 0
 best_epoch = 0
-jaccard_loss = smp.losses.JaccardLoss(mode='multilabel')
 
 train_losses, val_losses = [], []
 
