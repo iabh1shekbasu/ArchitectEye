@@ -1,5 +1,3 @@
-# AI701 Course Project
-
 
 # Project Title: Automated Bridge Damage Detection and Segmentation
 
@@ -8,6 +6,8 @@
 - [File Descriptions](#file-descriptions)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
+  - [Environment Setup](#environment-setup)
+  - [File Structure](#file-structure)
   - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -16,30 +16,50 @@
 
 ## Introduction
 
-This project presents a deep learning-based solution for automated bridge damage detection and segmentation, a critical challenge in maintaining the structural safety of global bridge infrastructure. Utilizing a Feature Pyramid Network (FPN) with an EfficientNet B4 backbone, pre-trained on ImageNet weights, our model excels in multi-label semantic segmentation. It is designed to work with the 'dacl10k: Dataset for Semantic Bridge Damage Segmentation', enabling the identification and classification of 19 different bridge damage classes. This achievement not only demonstrates significant progress in automated bridge damage detection but also lays a strong foundation for future research in structural safety and maintenance of both urban and rural bridge infrastructure. Our model sets a new benchmark with its state-of-the-art performance, particularly in terms of mean Intersection over Union (mIoU).
+This project presents a deep learning-based solution for automated bridge damage detection and segmentation, a critical challenge in maintaining the structural safety of global bridge infrastructure. Utilizing a Feature Pyramid Network (FPN) with an EfficientNet B4 backbone, pre-trained on ImageNet weights, our model excels in multi-label semantic segmentation. It is designed to work with the 'dacl10k: Dataset for Semantic Bridge Damage Segmentation', enabling the identification and classification of 19 different bridge damage classes.
 
 ## File Descriptions
 
-- `create_pt_files.py`: This script is essential for processing the 'dacl10k' dataset. It resizes images and prepares them for training, ensuring they are compatible with our deep learning model.
-- `data_load.py`: This script manages the loading and preprocessing of the dataset. It is equipped to handle various data formats and structures, making it versatile for diverse image datasets.
-- `model.py`: At the core of our project, this script defines and trains the deep learning model for bridge damage segmentation. It leverages advanced techniques and libraries to achieve superior performance.
+- `create_pt_files.py`: Processes the 'dacl10k' dataset, resizing images and preparing them for training.
+- `data_load.py`: Manages the loading and preprocessing of the dataset, handling various data formats and structures.
+- `model.py`: Defines and trains the deep learning model for bridge damage segmentation, leveraging advanced techniques and libraries.
 
 ## Getting Started
 
 ### Prerequisites
 
-Before running the project, ensure you have the following installed:
-- Python 3.6 or higher
-- PyTorch
-- torchvision
-- numpy
-- pandas
-- segmentation_models_pytorch
-
-Install them using pip:
+Before running the project, install the necessary dependencies:
 
 ```bash
-pip install torch torchvision numpy pandas segmentation-models-pytorch
+pip install -r requirements.txt
+```
+
+### Environment Setup
+
+Create a virtual environment using Conda to manage dependencies:
+
+```bash
+conda create -n bridge-detection python=3.8
+conda activate bridge-detection
+pip install -r requirements.txt
+```
+
+### File Structure
+
+Ensure your project directory follows this structure:
+
+```
+project/
+├── annotations/
+│   ├── train/ (n=6,935)
+│   └── validation/ (n=975)
+├── images/
+│   ├── train/ (n=6,935)
+│   └── validation/ (n=975)
+├── create_pt_files.py
+├── data_load.py
+├── model.py
+└── requirements.txt
 ```
 
 ### Installation
@@ -89,4 +109,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For any inquiries or further information, please reach out to [Your Email or Contact Information].
+For any inquiries or further information, please reach out to [MMMYYYY Email].
