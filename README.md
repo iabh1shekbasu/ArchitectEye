@@ -27,14 +27,10 @@ Our Model Weights can be found at https://mbzuaiac-my.sharepoint.com/:f:/g/perso
 
 ### Prerequisites
 ### Download the dataset
-```
 
 | Data File | Download |
 |-----------|----------|
 | `dacl10k_v2_devphase.zip` | [GigaMove](https://gigamove.rwth-aachen.de/en/download/ae8278474b389aa9cc0ab6c406b7a466), [AWS](https://dacl10k.s3.eu-central-1.amazonaws.com/dacl10k-challenge/dacl10k_v2_devphase.zip) |
-
-```
-
 
 ### Environment Setup
 
