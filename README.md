@@ -26,8 +26,8 @@ Our Model Weights can be found at https://mbzuaiac-my.sharepoint.com/:f:/g/perso
 ## Getting Started
 
 ### Prerequisites
-```
 ### Download the dataset
+```
 
 | Data File                      | Download                        | sha256sum  | 
 |--------------------------------|----------------------------------|-------------|
@@ -61,6 +61,7 @@ project/
 │   └── validation/ (n=975)
 ├── create_pt_files.py
 ├── model.py
+├── data_load.py
 └── requirements.txt
 ```
 
