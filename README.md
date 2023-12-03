@@ -67,8 +67,8 @@ project/
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/iabh1shekbasu/AI701_Course_Project.git 
-cd AI701_Course_Project
+git clone https://github.com/iabh1shekbasu/ArchitectEye.git 
+cd ArchitectEye
 ```
 
 ## Usage
